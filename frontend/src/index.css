@@ -14,3 +14,21 @@
   h1, h2, h3 { @apply font-display font-bold tracking-tight; }
 } 
 
+/* ===== Scrollbar Styling ===== */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;            /* scrollbar width */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #514b4b;   /* track color */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #514b4b;   /* thumb color */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #514b4b;   /* thumb hover color */
+}

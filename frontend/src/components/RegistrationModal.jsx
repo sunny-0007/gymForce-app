@@ -24,7 +24,7 @@ export default function RegistrationModal({ plan, onClose }) {
         ...form,
         plan,
       });
-      alert("Welcome to the family! Check your email.");
+      alert(" Your registration is successful.");
       onClose();
     } catch (err) {
       alert("Something went wrong. Try again.");
@@ -94,13 +94,13 @@ export default function RegistrationModal({ plan, onClose }) {
               <Listbox.Button className="p-5 w-full rounded-2xl bg-white/10 backdrop-blur border border-white/20 text-white text-left focus:border-purple-400 outline-none">
                 {form.gender || "Gender"}
               </Listbox.Button>
-              <Listbox.Options className="absolute  bottom-full mb-2 mt-2 w-full bg-white/10 backdrop-blur border border-white/20 rounded-2xl z-50 overflow-hidden">
+              <Listbox.Options className="absolute max-h-24 w-48 bg-white/10 backdrop-blur border border-white/20 rounded-2xl z-50 overflow-auto custom-scrollbar">
                 {genders.map((g) => (
                   <Listbox.Option
                     key={g}
                     value={g}
                     className={({ active, selected }) =>
-                      `cursor-pointer select-none p-4 text-white ${active ? "bg-purple-900/50" : ""} ${
+                      `cursor-pointer select-none p-2 text-white ${active ? "bg-purple-900/50" : ""} ${
                         selected ? "font-bold" : ""
                       }`
                     }
@@ -118,13 +118,13 @@ export default function RegistrationModal({ plan, onClose }) {
               <Listbox.Button className="p-5 w-full rounded-2xl bg-white/10 backdrop-blur border border-white/20 text-white text-left focus:border-purple-400 outline-none">
                 {form.bloodGroup || "Blood Group"}
               </Listbox.Button>
-              <Listbox.Options className="absolute  bottom-full mb-2 mt-2 w-full bg-white/10 backdrop-blur border border-white/20 rounded-2xl z-50 overflow-hidden">
+              <Listbox.Options className="absolute  max-h-24 mb-2 mt-2 w-48 bg-white/10 backdrop-blur border border-white/20 rounded-2xl z-50 overflow-auto custom-scrollbar">
                 {bloodGroups.map((bg) => (
                   <Listbox.Option
                     key={bg}
                     value={bg}
                     className={({ active, selected }) =>
-                      `cursor-pointer select-none p-4 text-white ${active ? "bg-purple-900/50" : ""} ${
+                      `cursor-pointer select-none p-2 text-white ${active ? "bg-purple-900/50" : ""} ${
                         selected ? "font-bold" : ""
                       }`
                     }
