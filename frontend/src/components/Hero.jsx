@@ -1,6 +1,6 @@
 export default function Hero({ onOpenForm }) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center custom-scrollbar">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-black to-pink-900/30" />
       <video autoPlay muted loop className="absolute inset-0 w-full h-full object-cover opacity-30">
         <source src="https://assets.mixkit.co/videos/preview/mixkit-athlete-training-on-the-gym-bars-33821-large.mp4" />

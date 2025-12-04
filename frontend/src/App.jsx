@@ -10,6 +10,9 @@ function App() {
 
   return (
     <>
+    <div>
+      
+    </div>
       <Navbar />
       <Hero onOpenForm={(plan) => setModal({ open: true, plan })} />
       <Plans onOpenForm={(plan) => setModal({ open: true, plan })} />

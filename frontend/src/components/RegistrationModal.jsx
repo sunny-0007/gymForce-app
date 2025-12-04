@@ -33,9 +33,9 @@ export default function RegistrationModal({ plan, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-auto custom-scrollbar">
       <div className="bg-gradient-to-br from-purple-900/90 to-black/90 rounded-3xl p-10 max-w-4xl w-full border border-purple-500/50">
-        <h2 className="text-5xl font-display text-center mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <h2 className="text-5xl font-display text-center mt-10 mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
           Final Step – {plan} Member
         </h2>
 

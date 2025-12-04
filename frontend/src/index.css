@@ -10,6 +10,7 @@
 @layer base {
   body {
     @apply font-sans antialiased  text-white;
+    @apply min-h-screen overflow-x-hidden;
   }
   h1, h2, h3 { @apply font-display font-bold tracking-tight; }
 } 
@@ -32,3 +33,4 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #514b4b;   /* thumb hover color */
 }
+
