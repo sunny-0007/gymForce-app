@@ -1,32 +1,31 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar.jsx'
-import Hero from './components/Hero.jsx'
-import Plans from './components/Plans.jsx'
-import RegistrationModal from './components/RegistrationModal.jsx'
-import Footer from './components/Footer.jsx'
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+import Hero from "./components/Hero.jsx";
+import Plans from "./components/Plans.jsx";
+import Footer from "./components/Footer.jsx";
+import RegistrationPage from "./components/RegistrationPage.jsx";  // NEW
 
-function App() {
-  const [modal, setModal] = useState({ open: false, plan: '' })
-
+export default function App() {
   return (
     <>
-    <div>
-      
-    </div>
       <Navbar />
-      <Hero onOpenForm={(plan) => setModal({ open: true, plan })} />
-      <Plans onOpenForm={(plan) => setModal({ open: true, plan })} />
-      <Footer />
 
-      {modal.open && (
-        <RegistrationModal 
-          plan={modal.plan} 
-          onClose={() => setModal({ open: false, plan: '' })}
+      <Routes>
+        {/* Home / Landing Page */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Plans />
+              <Footer />
+            </>
+          }
         />
-      )}
+
+        {/* Registration Page */}
+        <Route path="/register" element={<RegistrationPage />} />
+      </Routes>
     </>
-  )
+  );
 }
-
-export default App;
-
