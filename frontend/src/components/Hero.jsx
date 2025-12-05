@@ -1,41 +1,62 @@
-import { useNavigate } from "react-router-dom";
+import { Dumbbell } from "lucide-react";
 
-export default function Hero() {
-  const navigate = useNavigate();
-
+const Hero = () => {
   return (
-    <section className="relative min-h-screen mt-10 flex items-center justify-center custom-scrollbar">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-black to-pink-900/30" />
+    <div className="relative h-screen w-full overflow-hidden">
 
-      {/* Background video */}
-      <video
-        autoPlay
-        muted
-        loop
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
-      >
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-athlete-training-on-the-gym-bars-33821-large.mp4" />
-      </video>
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{
+          backgroundImage:
+            "url('https://plus.unsplash.com/premium_photo-1664301427534-28b6a53a9c4f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        }}
+      ></div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 max-w-5xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-display leading-tight sm:leading-tight md:leading-tight mb-4 sm:mb-6 text-gray-500">
-          BECOME <br />
-          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-            UNBREAKABLE
-          </span>
-        </h1>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
-          Premium training • World-class coaches • Real results
-        </p>
-        <button
-          onClick={() => navigate(`/register?plan=${"pro"}`)}
-          className="px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 rounded-full hover:shadow-2xl hover:shadow-purple-500/50 transform hover:scale-105 transition"
-        >
-          Start Your Journey
-        </button>
+      {/* Blur + Dark Gradient Overlay */}
+      <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-transparent"></div>
+
+      {/* Content Container */}
+      <div className="relative z-10 h-full flex items-center pl-2">
+        <div className="max-w-2xl px-4 sm:px-8 md:px-10 lg:px-32 ">
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-orange-500 font-semibold px-4 py-2 rounded-full shadow">
+            <Dumbbell className="w-4 h-4 text-orange-500" />
+            <span className="text-sm">Smart Gym Management</span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-5xl sm:text-5xl font-extrabold leading-tight mt-6">
+            <span className="text-black">Transform Your</span>
+            <br />
+            <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-transparent bg-clip-text">
+              Fitness Journey
+            </span>
+          </h1>
+
+          {/* Subtext */}
+          <p className="mt-6 text-gray-700 text-lg max-w-xl">
+            Experience seamless gym management with digital
+            membership cards, QR-based attendance, and instant
+            access to your fitness progress.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex gap-4 mt-10">
+            <button className="px-8 py-4 rounded-xl text-white font-semibold bg-gradient-to-r from-orange-500 to-teal-500 shadow hover:opacity-90 transition">
+              Get Started
+            </button>
+            <button className="px-8 py-4 rounded-xl font-semibold bg-white shadow">
+              Member Login
+            </button>
+          </div>
+
+        </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Hero;

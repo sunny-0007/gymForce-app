@@ -1,31 +1,32 @@
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar.jsx";
-import Hero from "./components/Hero.jsx";
-import Plans from "./components/Plans.jsx";
-import Footer from "./components/Footer.jsx";
-import RegistrationPage from "./components/RegistrationPage.jsx";  // NEW
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Hero from './components/Hero.jsx';
+import Features from './components/Features.jsx';
+import Pricing from './components/Pricing.jsx';
+import CTA from './components/CTA.jsx';
+import Footer from './components/Footer.jsx';
+import RegistrationForm from './components/RegistrationForm.jsx';
 
-export default function App() {
+function Home() {
   return (
-    <>
-      <Navbar />
-
-      <Routes>
-        {/* Home / Landing Page */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Plans />
-              <Footer />
-            </>
-          }
-        />
-
-        {/* Registration Page */}
-        <Route path="/register" element={<RegistrationPage />} />
-      </Routes>
-    </>
+    <div className="min-h-screen bg-white">
+      <Hero />
+      <Features />
+      <Pricing />
+      <CTA />
+      <Footer />
+    </div>
   );
 }
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<RegistrationForm />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
